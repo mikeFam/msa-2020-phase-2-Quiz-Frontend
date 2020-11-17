@@ -19,6 +19,18 @@ export type AnswerObject = {
   correctAnswer: string;
 };
 
+class Player{
+  name: string;
+  score: number;
+  time: number;
+  
+  constructor (name: string, score: number, time: number){
+    this.name = name;
+    this.score = score;
+    this.time = time;
+  }
+};
+
 const TOTAL_QUESTIONS = 10;
 
 const App: React.FC = () => {
@@ -29,6 +41,7 @@ const App: React.FC = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
   const [gameStart, setGameStart] = useState(false);
+  
 
   const startTrivia = async () => {
     setGameStart(true);
@@ -89,7 +102,6 @@ const App: React.FC = () => {
     <>
     <GlobalStyle/>
       <Wrapper>
-
         <img src={Logo} alt='Logo'/>
         <h1>REACT QUIZ</h1>
         {(gameOver || userAnswers.length === TOTAL_QUESTIONS)? (
@@ -106,6 +118,17 @@ const App: React.FC = () => {
             :
             <p className='final-score'>Final Score: {score}</p>  
        : null}
+        {userAnswers.length === TOTAL_QUESTIONS? (
+          <div>
+            <form>
+              <label> Name </label>
+              <input></input>
+              <button>
+                Submit
+              </button>
+            </form>
+          </div>
+        ) : null}
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
