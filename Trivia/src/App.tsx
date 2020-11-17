@@ -7,7 +7,7 @@ import Timer from './components/Timer';
 // types
 import { QuestionsState, Difficulty } from './API';
 // Styles 
-import { GlobalStyle, Wrapper, Header } from './App.styles';
+import { GlobalStyle, Wrapper, UserInput } from './App.styles';
 
 import Logo from './Images/logo/logo_transparent.png';
 
@@ -119,7 +119,7 @@ const App: React.FC = () => {
             <p className='final-score'>Final Score: {score}</p>  
        : null}
         {userAnswers.length === TOTAL_QUESTIONS? (
-          <div>
+          <UserInput>
             <form>
               <label> Name </label>
               <input></input>
@@ -127,7 +127,7 @@ const App: React.FC = () => {
                 Submit
               </button>
             </form>
-          </div>
+          </UserInput>
         ) : null}
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (

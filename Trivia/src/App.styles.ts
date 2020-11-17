@@ -2,12 +2,32 @@ import styled, { createGlobalStyle } from 'styled-components';
 import BGImage from './Images/dave-herring.jpg';
 import Logo from './Images/logo/logo_transparent.png';
 
-export const Header = styled.div`
+export const UserInput = styled.div`
+  margin: 4px;
+  display: flex;
+  
 
+  form {
+    font-size: 2vh;
+  }
 
+  input {
+    margin-right: 4px;
+    height: 35px;
+  }
+  
 
+  button {
+    cursor: pointer;
+    background: linear-gradient(180deg, #ffffff, #ffcc91);
+    border: 2px solid #d38558;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 40px;
+  }
 `;
-
 
 export const GlobalStyle = createGlobalStyle`
   html {
