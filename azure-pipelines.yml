@@ -17,7 +17,7 @@ pool:
   vmImage2: 'windows-lastest'
 
 variables:
-  rootDir: 'my-app'
+  rootDir: 'Trivia'
   buildDir: '$(rootDir)/build'
 
 steps:
